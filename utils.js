@@ -43,7 +43,7 @@ const commonMessages = {
 }
 
 function alertGeneral() {
-  alert("Oops! An error has occurred. Please try again later. If this problem continues, please contact Vinniehat.");
+  alert("Oops! An error has occurred. Please try again later. If this problem continues, please contact an admin.");
 }
 function alertApplication() {
   alert("Oops! An error has occurred. Please make sure all fields that are required were filled in. If they were, you may have an application already waiting a response.");
