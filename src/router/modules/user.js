@@ -43,7 +43,7 @@ export default [{
     {
       path: '/iceberg/apply',
       name: 'IcebergApply',
-      component: () => import('@/views/iceberg/Apply.vue'),
+      component: () => import('@/views/Iceberg/Apply.vue'),
       meta: {
         requiresAuth: true,
         roles: ['[ICE] Applicant']
@@ -70,7 +70,7 @@ export default [{
     {
       path: '/iceberg/disciplinary-action',
       name: 'SubmitDisciplinaryAction',
-      component: () => import('@/views/iceberg/Disciplinary-Action.vue'),
+      component: () => import('@/views/Iceberg/Disciplinary-Action.vue'),
       meta: {
         requiresAuth: true,
         roles: ['[ICE] Member']
