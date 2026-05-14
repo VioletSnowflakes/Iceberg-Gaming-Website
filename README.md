@@ -74,7 +74,7 @@ This creates the `iceberg_gaming` database and all 13 tables. It also inserts a 
 
 | Field | Value |
 |---|---|
-| Email | `vinniehat@gmail.com` |
+| Email | `test@example.com` |
 | Password | `password` |
 | Roles | `[ICE] Member`, `[ICE] Webmaster` |
 
