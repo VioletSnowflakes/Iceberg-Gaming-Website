@@ -2,7 +2,7 @@ const commonData = {
   discord: "https://discord.gg/7hDQCEb",
   teamspeak: "ts3server://ts.iceberg-gaming.com/?port=9987",
   bct_modpack: "https://steamcommunity.com/sharedfiles/filedetails/?id=1501538330",
-  webmaster: "Vinniehat"
+  webmaster: "[Name]"
 }
 const memberRoles = {
   bct: "[17th] Member",
