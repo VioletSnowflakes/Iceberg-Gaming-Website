@@ -273,12 +273,12 @@ CREATE TABLE IF NOT EXISTS disciplinary_action_forms (
 
 -- --------------------------------------------------------
 -- SEED DATA
--- Admin account: vinniehat@gmail.com
+-- Admin account: test@example.com
 -- Default password: "password"  (MD5: 5f4dcc3b5aa765d61d8327deb882cf99)
 -- IMPORTANT: Change this password immediately after first login via the settings page.
 -- --------------------------------------------------------
 INSERT INTO users (createdAt, discord, email, password, username, status, isDeleted)
-VALUES ('2021-01-01 00:00:00', '', 'vinniehat@gmail.com', '5f4dcc3b5aa765d61d8327deb882cf99', 'Vinnie', NULL, 0);
+VALUES ('2021-01-01 00:00:00', '', 'test@example.com', '5f4dcc3b5aa765d61d8327deb882cf99', 'Admin', NULL, 0);
 
 INSERT INTO user_roles (userID, role) VALUES (1, '[ICE] Member');
 INSERT INTO user_roles (userID, role) VALUES (1, '[ICE] Webmaster');
