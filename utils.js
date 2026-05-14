@@ -1,15 +1,11 @@
 const winston = require("winston");
 const {DateTime} = require("luxon");
-const { datadog } = require("./credentials.js");
+const credentials = require("./credentials.js");
 const { createLogger, format, transports } = require('winston');
-const base_url = require("./credentials").base_url;
+const base_url = credentials.base_url;
 
-// Winston ~
-const httpTransportOptions = {
-  host: datadog.logger.host,
-  path: datadog.logger.path,
-  ssl: datadog.logger.ssl
-};
+// In the browser bundle, webpack aliases winston to webpack-stubs/winston.js (a no-op).
+// On the server, this uses the real winston.
 const customLevels = {
   levels: {
     emergency: 0,
@@ -23,14 +19,22 @@ const customLevels = {
     success: 8
   },
 }
+const loggerTransports = [];
+if (credentials.datadog) {
+  loggerTransports.push(new transports.Http({
+    host: credentials.datadog.logger.host,
+    path: credentials.datadog.logger.path,
+    ssl:  credentials.datadog.logger.ssl
+  }));
+} else {
+  loggerTransports.push(new transports.Console());
+}
 const logger = createLogger({
   level: 'info',
   levels: customLevels.levels,
   exitOnError: false,
   format: format.json(),
-  transports: [
-    new transports.Http(httpTransportOptions),
-  ],
+  transports: loggerTransports,
 });
 
 const commonMessages = {

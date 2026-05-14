@@ -8,6 +8,8 @@
 ==========================================================================================*/
 
 
+const path = require('path');
+
 module.exports = {
   publicPath: '/',
   transpileDependencies: [
@@ -15,6 +17,12 @@ module.exports = {
     'resize-detector'
   ],
   configureWebpack: {
+    resolve: {
+      alias: {
+        // Winston is server-only. Swap it for a no-op stub in the browser bundle.
+        'winston': path.resolve(__dirname, 'webpack-stubs/winston.js')
+      }
+    },
     optimization: {
       splitChunks: {
         chunks: 'all'
